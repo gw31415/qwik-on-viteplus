@@ -1,0 +1,6 @@
+overrides:
+  vite: npm:@voidzero-dev/vite-plus-core@0.3.0
+
+allowBuilds:
+  "@parcel/watcher": true
+  sharp: true

@@ -41,7 +41,8 @@ export default defineConfig({
       "qwik/no-use-visible-task": "warn",
       "qwik/serializer-signal-usage": "error",
       "qwik/scope-use-task": "error",
-      "qwik/use-async-top": "warn",
+      // use-async-top も型情報が必要なため oxlint の JS プラグインでは動作せず無効化
+      "qwik/use-async-top": "off",
       "qwik/no-async-prevent-default": "warn",
       "qwik/no-await-navigate-in-use-task": "warn",
       "no-explicit-any": "off",

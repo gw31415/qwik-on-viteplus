@@ -1,6 +1,19 @@
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@0.3.0
 
+# vite は上記 override により vite-plus-core (Vite 8 互換の fork) に
+# 置き換えられる。バージョン番号が 0.3.0 のため各パッケージの
+# peer 範囲 (^6/^7/^8 等) と照合できず警告が出るが、実体は Vite 8 相当
+# のため 0.3.0 を許容バージョンとして透過する。
+peerDependencyRules:
+  allowedVersions:
+    vite: 0.3.0
+
 allowBuilds:
   "@parcel/watcher": true
+  esbuild: true
   sharp: true
+  workerd: true
+
+patchedDependencies:
+  "@qwik.dev/router@2.0.0-beta.43": patches/@qwik.dev__router@2.0.0-beta.43.patch

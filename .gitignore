@@ -14,7 +14,9 @@ node_modules
 .cache
 .mf
 .rollup.cache
+.wrangler
 tsconfig.tsbuildinfo
+worker-configuration.d.ts
 
 # Logs
 logs

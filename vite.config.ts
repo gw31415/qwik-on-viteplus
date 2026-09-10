@@ -1,21 +1,19 @@
 import { qwikVite } from "@qwik.dev/core/optimizer";
 import { qwikRouter } from "@qwik.dev/router/vite";
+// import UnoCSS from "@qstyle/unocss"; // 未導入: 有効化時は `@qstyle/unocss` + `unocss` を deps に追加し下のコメントアウトを外す
+import { qstyle } from "@qstyle/vite";
 import { defineConfig } from "vite-plus";
 
 export default defineConfig({
-  plugins: [qwikRouter(), qwikVite()],
+  // qstyle は qwik optimizer (enforce: pre) より先に css prop を rewrite する。
+  plugins: [
+    // UnoCSS(), // 未導入: qstyle() より前に置く（class ユーティリティを css prop へ翻訳するため）
+    qstyle(),
+    qwikRouter(),
+    qwikVite(),
+  ],
   resolve: {
     tsconfigPaths: true,
-  },
-  server: {
-    headers: {
-      "Cache-Control": "public, max-age=0",
-    },
-  },
-  preview: {
-    headers: {
-      "Cache-Control": "public, max-age=600",
-    },
   },
   lint: {
     options: {
@@ -49,5 +47,8 @@ export default defineConfig({
     },
     categories: { correctness: "warn", suspicious: "warn" },
   },
-  fmt: {},
+  fmt: {
+    // wrangler types による生成物はフォーマット対象外
+    ignorePatterns: ["worker-configuration.d.ts"],
+  },
 });

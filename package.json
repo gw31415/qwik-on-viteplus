@@ -5,22 +5,27 @@
   "scripts": {
     "build": "qwik build",
     "build.client": "vp build",
-    "build.preview": "vp build --ssr src/entry.preview.tsx",
-    "dev": "vp dev --mode ssr",
-    "fmt": "vp fmt",
+    "build.server": "qwik check-client src dist && vp build -c adapters/cloudflare-workers/vite.config.ts",
+    "build.types": "wrangler types && tsc --incremental --noEmit",
     "check": "vp check",
-    "check.types": "tsc --incremental --noEmit",
-    "check.lint": "vp lint",
     "check.fmt": "vp fmt --check",
-    "preview": "qwik build preview && vp preview --open"
+    "deploy": "pnpm run build && wrangler deploy",
+    "dev": "vp dev -c adapters/cloudflare-workers/vite.config.ts --mode ssr",
+    "fmt": "vp fmt",
+    "lint": "vp lint",
+    "preview": "pnpm run build && wrangler dev"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.54.3",
+    "@qstyle/qwik": "^0.1.0",
+    "@qstyle/vite": "^0.1.1",
     "@qwik.dev/core": "2.0.0-beta.43",
     "@qwik.dev/router": "2.0.0-beta.43",
     "@types/node": "26.4.1",
     "eslint-plugin-qwik": "2.0.0-beta.43",
     "typescript": "^7.0.2",
-    "vite-plus": "^0.3.0"
+    "vite-plus": "^0.3.0",
+    "wrangler": "^4.128.0"
   },
   "engines": {
     "node": "^26"

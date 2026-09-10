@@ -51,4 +51,7 @@ export default defineConfig({
     // wrangler types による生成物はフォーマット対象外
     ignorePatterns: ["worker-configuration.d.ts"],
   },
+  server: {
+    allowedHosts: true,
+  },
 });

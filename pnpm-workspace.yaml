@@ -17,3 +17,9 @@ allowBuilds:
 
 patchedDependencies:
   "@qwik.dev/router@2.0.0-beta.43": patches/@qwik.dev__router@2.0.0-beta.43.patch
+
+minimumReleaseAgeExclude:
+  - "@qstyle/core@0.1.1"
+  - "@qstyle/inspector@0.1.1"
+  - "@qstyle/qwik@0.2.0"
+  - "@qstyle/vite@0.2.0"

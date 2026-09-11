@@ -8,7 +8,7 @@ vite-plus が dev / build / lint / fmt を兼ねるため、専用の ESLint・P
 
 - **Qwik 2.0.0-beta** + **QwikRouter** によるディレクトリベースルーティング
 - **vite-plus** による統合ツールチェイン（dev / build / preview / lint / fmt / 型チェック）
-- **qstyle** による `css` prop スタイリング + ルート単位の CSS 配信（`<QstyleLinks />`）
+- **qstyle** による `css` prop スタイリング
 - **Cloudflare Workers** デプロイ対応（`adapters/cloudflare-workers`, `wrangler.jsonc`）
 - 指紋付きアセットの長期キャッシュ（`public/_headers`）で初期表示を高速化
 - 設定ファイルは `vite.config.ts`（lint・fmt 設定含む）と `tsconfig.json` のみ
@@ -48,7 +48,7 @@ pnpm fmt            # フォーマット
 ## カスタマイズ
 
 - UnoCSS を使う場合：`@qstyle/unocss` + `unocss` を deps に追加し、`vite.config.ts` のコメントアウト（`UnoCSS()`）を有効化してください（`qstyle()` より前に置く）。
-- qstyle の `backend: "css-asset"` + `routes` 指定でルート単位の CSS 分割配信ができます（既定は引数なし）。
+- qstyleはnpm公開前のため、Git上のmainブランチをlockfileで固定して利用します。
 - `worker-configuration.d.ts` は `pnpm build.types`（`wrangler types`）で生成されます。
 
 ## Limitations

@@ -1,5 +1,13 @@
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@0.3.0
+  "@qstyle/compiler": "github:gw31415/qstyle#path:packages/compiler&main"
+  "@qstyle/core": "github:gw31415/qstyle#path:packages/core&main"
+  "@qstyle/inspector": "github:gw31415/qstyle#path:packages/inspector&main"
+  "@qstyle/qwik": "github:gw31415/qstyle#path:packages/qwik&main"
+
+# The unpublished qstyle packages intentionally reference Git subdirectories.
+# They are trusted inputs from the same repository and need no install script.
+blockExoticSubdeps: false
 
 # vite は上記 override により vite-plus-core (Vite 8 互換の fork) に
 # 置き換えられる。バージョン番号が 0.3.0 のため各パッケージの

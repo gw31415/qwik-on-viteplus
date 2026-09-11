@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.54.3",
-    "@qstyle/qwik": "^0.2.0",
-    "@qstyle/vite": "^0.2.0",
+    "@qstyle/qwik": "github:gw31415/qstyle#path:packages/qwik&main",
+    "@qstyle/vite": "github:gw31415/qstyle#path:packages/vite&main",
     "@qwik.dev/core": "2.0.0-beta.43",
     "@qwik.dev/router": "2.0.0-beta.43",
     "@types/node": "26.4.1",

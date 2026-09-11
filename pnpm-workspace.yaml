@@ -1,33 +1,20 @@
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@0.3.0
-  "@qstyle/compiler": "github:gw31415/qstyle#path:packages/compiler&main"
-  "@qstyle/core": "github:gw31415/qstyle#path:packages/core&main"
-  "@qstyle/inspector": "github:gw31415/qstyle#path:packages/inspector&main"
-  "@qstyle/qwik": "github:gw31415/qstyle#path:packages/qwik&main"
 
-# The unpublished qstyle packages intentionally reference Git subdirectories.
-# They are trusted inputs from the same repository and need no install script.
-blockExoticSubdeps: false
-
-# vite は上記 override により vite-plus-core (Vite 8 互換の fork) に
-# 置き換えられる。バージョン番号が 0.3.0 のため各パッケージの
-# peer 範囲 (^6/^7/^8 等) と照合できず警告が出るが、実体は Vite 8 相当
-# のため 0.3.0 を許容バージョンとして透過する。
+# vite-plus-core implements the Vite 8 API but publishes as 0.3.0. Resolve all
+# Vite peers to that implementation and accept its own package version.
 peerDependencyRules:
   allowedVersions:
     vite: 0.3.0
 
 allowBuilds:
-  "@parcel/watcher": true
+  '@parcel/watcher': true
   esbuild: true
   sharp: true
   workerd: true
-
-patchedDependencies:
-  "@qwik.dev/router@2.0.0-beta.43": patches/@qwik.dev__router@2.0.0-beta.43.patch
-
 minimumReleaseAgeExclude:
-  - "@qstyle/core@0.1.1"
-  - "@qstyle/inspector@0.1.1"
-  - "@qstyle/qwik@0.2.0"
-  - "@qstyle/vite@0.2.0"
+  - '@qstyle/compiler@1.0.0-alpha.0'
+  - '@qstyle/core@0.1.1'
+  - '@qstyle/inspector@0.1.1'
+  - '@qstyle/qwik@0.2.0'
+  - '@qstyle/vite@0.2.0'

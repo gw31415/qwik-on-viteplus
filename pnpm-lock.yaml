@@ -107,13 +107,6 @@ settings:
 
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@0.3.0
-  '@qstyle/compiler': github:gw31415/qstyle#path:packages/compiler&main
-  '@qstyle/core': github:gw31415/qstyle#path:packages/core&main
-  '@qstyle/inspector': github:gw31415/qstyle#path:packages/inspector&main
-  '@qstyle/qwik': github:gw31415/qstyle#path:packages/qwik&main
-
-patchedDependencies:
-  '@qwik.dev/router@2.0.0-beta.43': b55a43b85afeef509ae8d665bc4bd9be2a7c89c120deb250d1baf94bec026261
 
 importers:
 
@@ -123,17 +116,17 @@ importers:
         specifier: ^1.54.3
         version: 1.54.6(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(wrangler@4.130.0)
       '@qstyle/qwik':
-        specifier: github:gw31415/qstyle#path:packages/qwik&main
-        version: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/qwik(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))
+        specifier: ^0.2.0
+        version: 0.2.0(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))
       '@qstyle/vite':
-        specifier: github:gw31415/qstyle#path:packages/vite&main
-        version: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/vite(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))
+        specifier: ^0.2.0
+        version: 0.2.0(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))
       '@qwik.dev/core':
         specifier: 2.0.0-beta.43
         version: 2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11)
       '@qwik.dev/router':
         specifier: 2.0.0-beta.43
-        version: 2.0.0-beta.43(patch_hash=b55a43b85afeef509ae8d665bc4bd9be2a7c89c120deb250d1baf94bec026261)(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(supports-color@10.2.2)(typescript@7.0.2)
+        version: 2.0.0-beta.43(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(supports-color@10.2.2)(typescript@7.0.2)
       '@types/node':
         specifier: 26.4.1
         version: 26.4.1
@@ -162,50 +155,13 @@ packages:
     resolution: {integrity: sha512-Aup7aUOfpbAUg2ROOJN6Iw5f9DMBlzu0mIkm/malLQFN/YQgO48wCj0Kxa3sEHJvPVFg7siR+qRInwXd2qhQKw==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/code-frame@8.0.0':
-    resolution: {integrity: sha512-dYYg153EyN2Ekbqw2zAsbd6/JR+9N2SEoC7YV2GyyqMM7x9bLDTjBD6XBhSMLH0wtIVyJj03jWNriQhaN+eoCw==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
-  '@babel/generator@8.0.0':
-    resolution: {integrity: sha512-NT9NrVwJsbSV6Y2FSstWa71EETOnzrjkL5/wX3D2mYHtKM+qvqB1DvR4D0Setb/gDBsHzRICifwEWMO8CnTF6g==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
-  '@babel/helper-globals@8.0.0':
-    resolution: {integrity: sha512-lLozHOM6sWWlxNo8CYqHy4MBZeTvHXNgVPBfPOGsjPKUzHC2Az9QwB6gxdQmpwHl6GlQtbGgS+lj5887guDiLw==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
-  '@babel/helper-string-parser@8.0.0':
-    resolution: {integrity: sha512-6mJgmFFFIIO82vvoLt9XtRC7/TkzXfts1t/SpRX4IHSzMgqoPYCWesVu1udUPUWioAE/2fcG6WuI8zrkE1gwrg==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
   '@babel/helper-validator-identifier@7.29.7':
     resolution: {integrity: sha512-qehxGkRj55h/ff8EMaJ+cYhyaKlHIxqYDn682wQD7RNp9UujOQsHog2uS0r2vzr4pW+sXf90NeeayjcNaX3fFg==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/helper-validator-identifier@8.0.4':
-    resolution: {integrity: sha512-4wFaiLd0bVo4cIoTXI3zKI038NIWE/cr3jvBjejOVYVxV/m8Ltav1USiGzG1fmS5J2RhgEOgXNNK46cRPnRsrg==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
-  '@babel/parser@8.0.4':
-    resolution: {integrity: sha512-srpptsAkEbbNIC/q8nT7o+m6CQe8CJUTV/t7MYc9NnWlgYVtHOb7JH6SorxMhN0kuRJjVqXbKClG6xSbPtzz+g==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-    hasBin: true
-
   '@babel/runtime@7.29.7':
     resolution: {integrity: sha512-Nq8OhGWiZIZGV6hLHoyAKLLcJihP/xFeBMGJoUrxTX2psI8dCifzLhZISFb+VWS3wFMRDmCGw5R+dOySCqPLhw==}
     engines: {node: '>=6.9.0'}
-
-  '@babel/template@8.0.0':
-    resolution: {integrity: sha512-eAD0QW/AlbamBbw0FeGiwasbCVPq5ncW0HNVyLP3B9czqLyh4gvw+5JTSNt6le9+ziAU7mqDZsKTHf3jTb4chQ==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
-  '@babel/traverse@8.0.4':
-    resolution: {integrity: sha512-bZnmqzGG8UZneG1lLxBoWIH0G6Gr1D846Yu4/3XnY6FhCndMR49u26nTY08u/dAxWmLWF9vGQOuC+84FfIUoeg==}
-    engines: {node: ^22.18.0 || >=24.11.0}
-
-  '@babel/types@8.0.4':
-    resolution: {integrity: sha512-eY+Yn3dCqTGmyiq2QRU66lA5FL8lqqqvecHt0fF3uHONIa7ToYsaCiWV8lOKqAs0Rb2SjixiKFROngnulPtt2g==}
-    engines: {node: ^22.18.0 || >=24.11.0}
 
   '@blazediff/core@1.9.1':
     resolution: {integrity: sha512-ehg3jIkYKulZh+8om/O25vkvSsXXwC+skXmyA87FFx6A/45eqOkZsBltMw/TVteb0mloiGT8oGRTcjRAz66zaA==}
@@ -784,18 +740,12 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@jridgewell/gen-mapping@0.3.13':
-    resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
-
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
 
   '@jridgewell/sourcemap-codec@1.6.0':
     resolution: {integrity: sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==}
-
-  '@jridgewell/trace-mapping@0.3.31':
-    resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
@@ -1190,34 +1140,25 @@ packages:
   '@poppinss/exception@1.2.3':
     resolution: {integrity: sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw==}
 
-  '@qstyle/compiler@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/compiler':
-    resolution: {gitHosted: true, integrity: sha512-CTCluYhDsZkUNnRO1OU9Qthvr/hUrUIJkte1uSVuINf5STFnz3dKWYmUqNHGN83vd6TF9SmpXQ2RCJ4vc4mXng==, path: packages/compiler, tarball: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413}
-    version: 1.0.0-alpha.0
-    engines: {node: '>=24.11'}
-
-  '@qstyle/core@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/core':
-    resolution: {gitHosted: true, integrity: sha512-CTCluYhDsZkUNnRO1OU9Qthvr/hUrUIJkte1uSVuINf5STFnz3dKWYmUqNHGN83vd6TF9SmpXQ2RCJ4vc4mXng==, path: packages/core, tarball: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413}
-    version: 0.1.1
+  '@qstyle/core@0.1.1':
+    resolution: {integrity: sha512-39T+Ds/IsvEkp3VbuU1D7OZg9Q89sg88b+zjyjC4zUz+dUbi6fI/T+fwaam9t8hXZ3+M0QwihuJM32kOgfcvXg==}
     engines: {node: '>=22.13'}
 
-  '@qstyle/inspector@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/inspector':
-    resolution: {gitHosted: true, integrity: sha512-CTCluYhDsZkUNnRO1OU9Qthvr/hUrUIJkte1uSVuINf5STFnz3dKWYmUqNHGN83vd6TF9SmpXQ2RCJ4vc4mXng==, path: packages/inspector, tarball: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413}
-    version: 0.1.1
+  '@qstyle/inspector@0.1.1':
+    resolution: {integrity: sha512-NnwddTnnWQnPe2SMu6+TAfZUkJVmgh6SJ/NB/eTUq/RKyc64SVHd7kzG5dR53s8rCOt8osAG6IFTQTtb2xBKTg==}
     engines: {node: '>=22.13'}
 
-  '@qstyle/qwik@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/qwik':
-    resolution: {gitHosted: true, integrity: sha512-CTCluYhDsZkUNnRO1OU9Qthvr/hUrUIJkte1uSVuINf5STFnz3dKWYmUqNHGN83vd6TF9SmpXQ2RCJ4vc4mXng==, path: packages/qwik, tarball: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413}
-    version: 0.2.0
+  '@qstyle/qwik@0.2.0':
+    resolution: {integrity: sha512-m/waA1J2t3jBmFpAcX/TrqVj0jbEBELsf2WHs6AV6h6QUvdbxCgWr5cNl4xvPk+ikjgmIi9l7VhpIrHrbp7P6Q==}
     engines: {node: '>=22.13'}
     peerDependencies:
-      '@qwik.dev/core': 2.0.0-beta.43
+      '@qwik.dev/core': ^2.0.0-beta.43
 
-  '@qstyle/vite@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/vite':
-    resolution: {gitHosted: true, integrity: sha512-CTCluYhDsZkUNnRO1OU9Qthvr/hUrUIJkte1uSVuINf5STFnz3dKWYmUqNHGN83vd6TF9SmpXQ2RCJ4vc4mXng==, path: packages/vite, tarball: https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413}
-    version: 0.2.0
-    engines: {node: '>=24.11'}
+  '@qstyle/vite@0.2.0':
+    resolution: {integrity: sha512-QE7YMcHTbwNtUCIIOyZl/vIR8wFciT3W88T1MxTNIWkSEiWZwH+V/5wRntA+YHii66A5TNrGMRisU3gGQyIr/A==}
+    engines: {node: '>=22.13'}
     peerDependencies:
-      '@qwik.dev/core': 2.0.0-beta.43
+      '@qwik.dev/core': ^2.0.0-beta.43
       vite: ^8.0.0
 
   '@qwik.dev/core@2.0.0-beta.43':
@@ -1300,9 +1241,6 @@ packages:
 
   '@types/hast@3.0.5':
     resolution: {integrity: sha512-rp/ezSWaD1m44dPKICGhiskI13nVr7qTloFwDa/IYkhhf5nzwP+zIQcIJh3WIFSBOy/H1PzB40jPjMDksN4F+g==}
-
-  '@types/jsesc@2.5.1':
-    resolution: {integrity: sha512-9VN+6yxLOPLOav+7PwjZbxiID2bVaeq0ED4qSQmdQTdjnXJSaCVKTR58t15oqH1H5t8Ng2ZX1SabJVoN9Q34bw==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -1921,11 +1859,6 @@ packages:
     resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
     engines: {node: '>= 6'}
 
-  cssesc@3.0.0:
-    resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
-    engines: {node: '>=4'}
-    hasBin: true
-
   csso@5.0.5:
     resolution: {integrity: sha512-0LrrStPOdJj+SPCCrGhzryycLjwcgUSHBtxNA8aIDxf0GLsRh1cKYhB00Gd1lDOS4yGH69+SNn13+TWbVHETFQ==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0, npm: '>=7.0.0'}
@@ -2018,10 +1951,6 @@ packages:
   entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
-
-  entities@8.1.0:
-    resolution: {integrity: sha512-kxL7msIffSuh9aaFAMD7rxAIuTRMAHMeBtgHW2yUdWw732ZNh4MehkF2gdjvtdmikkaIP9bFDDJOPlsvm7avrA==}
-    engines: {node: '>=20.19.0'}
 
   errno@0.1.8:
     resolution: {integrity: sha512-dJ6oBr5SQ1VSd9qkk7ByRgb/1SH4JZjCHSW/mr63/QcXO9zLVxvJ6Oy13nio03rxpSnVDDjFor75SjVeZWPW/A==}
@@ -2475,16 +2404,8 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  js-tokens@10.0.0:
-    resolution: {integrity: sha512-lM/UBzQmfJRo9ABXbPWemivdCW8V2G8FHaHdypQaIy523snUjog0W71ayWXTjiR+ixeMyVHN2XcpnTd/liPg/Q==}
-
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
-
-  jsesc@3.1.0:
-    resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
-    engines: {node: '>=6'}
-    hasBin: true
 
   json-buffer@3.0.1:
     resolution: {integrity: sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ==}
@@ -2611,9 +2532,6 @@ packages:
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
-
-  magic-string@1.3.1:
-    resolution: {integrity: sha512-rm91zr2Ou+XueDTohjQQjdQEcYM6zVi8KVUCG8Ec3vHwUEKrhSdCNyfuIywkA6hcCAteIn0ZOtAHA6eGpiX+Pg==}
 
   make-dir@5.1.0:
     resolution: {integrity: sha512-IfpFq6UM39dUNiphpA6uDezNx/AvWyhwfICWPR3t1VspkgkMZrL+Rk1RbN1bx+aeNYwOrqGJgEgV3yotk+ZUVw==}
@@ -2929,9 +2847,6 @@ packages:
     resolution: {integrity: sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==}
     engines: {node: '>= 0.10'}
 
-  parse5@8.0.1:
-    resolution: {integrity: sha512-z1e/HMG90obSGeidlli3hj7cbocou0/wa5HacvI3ASx34PecNjNQeaHNo5WIZpWofN9kgkqV1q5YvXe3F0FoPw==}
-
   path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
@@ -2968,19 +2883,8 @@ packages:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
 
-  postcss-selector-parser@7.1.6:
-    resolution: {integrity: sha512-7qASPzhKF2l2KLboRZux8CCTRMdGiV08vWmyKzPz22qZ7ZjQBOeY7rNzNoCLSUiftJ7HUq0GERHmxw/t0dCdMw==}
-    engines: {node: '>=4'}
-
-  postcss-value-parser@4.2.0:
-    resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
-
   postcss@8.5.26:
     resolution: {integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==}
-    engines: {node: ^10 || ^12 || >=14}
-
-  postcss@8.5.28:
-    resolution: {integrity: sha512-RRuzqDtt5Y9h3quz5hWhK+TPnsmVs6WwSU6LkJMeY4HstUEDuYTG8UJSdawMRzmzAtV+KEoG8N3Qg2qLy5vM/A==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -3324,9 +3228,6 @@ packages:
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
 
-  util-deprecate@1.0.2:
-    resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
-
   uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
@@ -3522,54 +3423,9 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.1.1
 
-  '@babel/code-frame@8.0.0':
-    dependencies:
-      '@babel/helper-validator-identifier': 8.0.4
-      js-tokens: 10.0.0
-
-  '@babel/generator@8.0.0':
-    dependencies:
-      '@babel/parser': 8.0.4
-      '@babel/types': 8.0.4
-      '@jridgewell/gen-mapping': 0.3.13
-      '@jridgewell/trace-mapping': 0.3.31
-      '@types/jsesc': 2.5.1
-      jsesc: 3.1.0
-
-  '@babel/helper-globals@8.0.0': {}
-
-  '@babel/helper-string-parser@8.0.0': {}
-
   '@babel/helper-validator-identifier@7.29.7': {}
 
-  '@babel/helper-validator-identifier@8.0.4': {}
-
-  '@babel/parser@8.0.4':
-    dependencies:
-      '@babel/types': 8.0.4
-
   '@babel/runtime@7.29.7': {}
-
-  '@babel/template@8.0.0':
-    dependencies:
-      '@babel/code-frame': 8.0.0
-      '@babel/parser': 8.0.4
-      '@babel/types': 8.0.4
-
-  '@babel/traverse@8.0.4':
-    dependencies:
-      '@babel/code-frame': 8.0.0
-      '@babel/generator': 8.0.0
-      '@babel/helper-globals': 8.0.0
-      '@babel/parser': 8.0.4
-      '@babel/template': 8.0.0
-      '@babel/types': 8.0.4
-      obug: 2.1.4
-
-  '@babel/types@8.0.4':
-    dependencies:
-      '@babel/helper-string-parser': 8.0.0
-      '@babel/helper-validator-identifier': 8.0.4
 
   '@blazediff/core@1.9.1': {}
 
@@ -3942,19 +3798,9 @@ snapshots:
   '@img/sharp-win32-x64@0.35.2':
     optional: true
 
-  '@jridgewell/gen-mapping@0.3.13':
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.6.0
-      '@jridgewell/trace-mapping': 0.3.31
-
   '@jridgewell/resolve-uri@3.1.2': {}
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
-
-  '@jridgewell/trace-mapping@0.3.31':
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.6.0
 
   '@jridgewell/trace-mapping@0.3.9':
     dependencies:
@@ -4206,36 +4052,23 @@ snapshots:
 
   '@poppinss/exception@1.2.3': {}
 
-  '@qstyle/compiler@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/compiler':
-    dependencies:
-      '@babel/parser': 8.0.4
-      '@babel/traverse': 8.0.4
-      '@babel/types': 8.0.4
-      '@qstyle/core': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/core
-      magic-string: 1.3.1
-      postcss: 8.5.28
-      postcss-selector-parser: 7.1.6
-      postcss-value-parser: 4.2.0
+  '@qstyle/core@0.1.1': {}
 
-  '@qstyle/core@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/core': {}
-
-  '@qstyle/inspector@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/inspector':
+  '@qstyle/inspector@0.1.1':
     dependencies:
-      '@qstyle/core': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/core
+      '@qstyle/core': 0.1.1
 
-  '@qstyle/qwik@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/qwik(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))':
+  '@qstyle/qwik@0.2.0(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))':
     dependencies:
-      '@qstyle/core': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/core
+      '@qstyle/core': 0.1.1
       '@qwik.dev/core': 2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11)
       csstype: 3.2.3
-      parse5: 8.0.1
 
-  '@qstyle/vite@https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/vite(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))':
+  '@qstyle/vite@0.2.0(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))':
     dependencies:
-      '@qstyle/compiler': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/compiler
-      '@qstyle/core': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/core
-      '@qstyle/inspector': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/inspector
-      '@qstyle/qwik': https://codeload.github.com/gw31415/qstyle/tar.gz/ba8f454d5c1d594fa8f4911da1ffe09ebb2ec413#path:packages/qwik(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))
+      '@qstyle/core': 0.1.1
+      '@qstyle/inspector': 0.1.1
+      '@qstyle/qwik': 0.2.0(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))
       '@qwik.dev/core': 2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11)
       vite: '@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0)'
 
@@ -4252,7 +4085,7 @@ snapshots:
 
   '@qwik.dev/optimizer@2.1.0-beta.8': {}
 
-  '@qwik.dev/router@2.0.0-beta.43(patch_hash=b55a43b85afeef509ae8d665bc4bd9be2a7c89c120deb250d1baf94bec026261)(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(supports-color@10.2.2)(typescript@7.0.2)':
+  '@qwik.dev/router@2.0.0-beta.43(@qwik.dev/core@2.0.0-beta.43(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(prettier@3.9.6)(vitest@4.1.11))(@voidzero-dev/vite-plus-core@0.3.0(@types/node@26.4.1)(esbuild@0.28.1)(less@4.9.0(supports-color@10.2.2))(sass@1.103.1)(stylus@0.62.0(supports-color@10.2.2))(typescript@7.0.2)(yaml@2.9.0))(supports-color@10.2.2)(typescript@7.0.2)':
     dependencies:
       '@azure/functions': 3.5.1
       '@mdx-js/mdx': 3.1.1(supports-color@10.2.2)
@@ -4342,8 +4175,6 @@ snapshots:
   '@types/hast@3.0.5':
     dependencies:
       '@types/unist': 3.0.3
-
-  '@types/jsesc@2.5.1': {}
 
   '@types/json-schema@7.0.15': {}
 
@@ -4831,8 +4662,6 @@ snapshots:
 
   css-what@6.2.2: {}
 
-  cssesc@3.0.0: {}
-
   csso@5.0.5:
     dependencies:
       css-tree: 2.2.1
@@ -4930,8 +4759,6 @@ snapshots:
       gopd: 1.2.0
 
   entities@4.5.0: {}
-
-  entities@8.1.0: {}
 
   errno@0.1.8:
     dependencies:
@@ -5561,11 +5388,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  js-tokens@10.0.0: {}
-
   js-tokens@4.0.0: {}
-
-  jsesc@3.1.0: {}
 
   json-buffer@3.0.1: {}
 
@@ -5675,10 +5498,6 @@ snapshots:
   lz-string@1.5.0: {}
 
   magic-string@0.30.21:
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.6.0
-
-  magic-string@1.3.1:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
 
@@ -6328,10 +6147,6 @@ snapshots:
   parse-node-version@1.0.1:
     optional: true
 
-  parse5@8.0.1:
-    dependencies:
-      entities: 8.1.0
-
   path-exists@4.0.0: {}
 
   path-is-absolute@1.0.1:
@@ -6357,20 +6172,7 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-selector-parser@7.1.6:
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-
-  postcss-value-parser@4.2.0: {}
-
   postcss@8.5.26:
-    dependencies:
-      nanoid: 3.3.18
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
-
-  postcss@8.5.28:
     dependencies:
       nanoid: 3.3.18
       picocolors: 1.1.1
@@ -6929,8 +6731,6 @@ snapshots:
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
-
-  util-deprecate@1.0.2: {}
 
   uuid@8.3.2: {}
 

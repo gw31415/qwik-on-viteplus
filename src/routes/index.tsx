@@ -1,5 +1,5 @@
 /* oxlint-disable qwik/jsx-img -- The single public hero is precompressed to WebP with explicit dimensions. */
-import { component$, useSignal, useStyles$ } from "@qwik.dev/core";
+import { $, component$, useSignal, useStyles$, useVisibleTask$ } from "@qwik.dev/core";
 import type { DocumentHead } from "@qwik.dev/router";
 
 const toneOptions = [
@@ -200,6 +200,27 @@ const ToolCard = component$(
 const StampDemo = component$(() => {
   const stampCount = useSignal(0);
   const stampLabel = useSignal<(typeof stampLabels)[number]>("いい感じ");
+  const stamp = $((event: PointerEvent, button: HTMLButtonElement) => {
+    stampCount.value += 1;
+    stampLabel.value = stampLabels[stampCount.value % stampLabels.length];
+    const label = button.firstElementChild;
+    if (label && event.detail > 0 && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      for (const animation of label.getAnimations()) animation.cancel();
+      label.animate(
+        [
+          { transform: "scale(.94)" },
+          { transform: "scale(1.04)", offset: 0.45 },
+          { transform: "scale(1)" },
+        ],
+        { duration: 240, easing: "cubic-bezier(.23, 1, .32, 1)" },
+      );
+    }
+  });
+  // Warm the click handler when the demo enters view, before the first tap.
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    void stamp.resolve();
+  });
   return (
     <article
       css={{
@@ -256,10 +277,7 @@ const StampDemo = component$(() => {
         <button
           type="button"
           aria-label="スタンプを押す"
-          onClick$={() => {
-            stampCount.value += 1;
-            stampLabel.value = stampLabels[stampCount.value % stampLabels.length];
-          }}
+          onClick$={stamp}
           css={{
             display: "grid",
             width: "116px",
@@ -270,17 +288,18 @@ const StampDemo = component$(() => {
             background: "#fafdff",
             color: "#66558f",
             cursor: "pointer",
+            touchAction: "manipulation",
+            userSelect: "none",
             fontSize: "16px",
             fontWeight: 800,
             boxShadow: "0 12px 0 #cbc0f6, 0 22px 30px rgba(91, 76, 142, 0.16)",
-            transition: "transform 160ms ease, box-shadow 160ms ease",
-            "&:hover": {
-              transform: "translateY(-4px)",
-              boxShadow: "0 16px 0 #cbc0f6, 0 28px 34px rgba(91, 76, 142, 0.18)",
+            transition: "transform 220ms cubic-bezier(.2, 1.4, .4, 1)",
+            "@media (hover: hover) and (pointer: fine)": {
+              "&:hover": { transform: "translateY(-3px)" },
             },
             "&:active": {
-              transform: "translateY(7px)",
-              boxShadow: "0 5px 0 #cbc0f6, 0 11px 16px rgba(91, 76, 142, 0.13)",
+              transform: "translateY(7px) scale(.97)",
+              transitionDuration: "0ms",
             },
             "&:focus-visible": {
               outline: "3px solid #0a0d12",
@@ -288,7 +307,7 @@ const StampDemo = component$(() => {
             },
           }}
         >
-          {stampLabel.value}
+          <span>{stampLabel.value}</span>
         </button>
         <p
           aria-live="polite"
@@ -874,10 +893,64 @@ const StartCommands = component$(() => {
   );
 });
 
+const HeroArtwork = component$(() => {
+  const image = useSignal<HTMLImageElement>();
+  useStyles$(`@media (scripting: none) { .hero-artwork { opacity: 1 !important; } }`);
+  // Decode both cached and freshly loaded images before the one-time reveal.
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(({ cleanup }) => {
+    const element = image.value;
+    if (!element) return;
+    let disposed = false;
+    let animation: Animation | undefined;
+    cleanup(() => {
+      disposed = true;
+      animation?.cancel();
+    });
+    void element
+      .decode()
+      .catch(() => {})
+      .then(() => {
+        if (disposed) return;
+        element.style.opacity = "1";
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          animation = element.animate(
+            [
+              { opacity: 0, transform: "translateY(8px) scale(.985)" },
+              { opacity: 1, transform: "none" },
+            ],
+            { duration: 380, easing: "cubic-bezier(.23, 1, .32, 1)" },
+          );
+        }
+      });
+  });
+  return (
+    <>
+      <img
+        ref={image}
+        class="hero-artwork"
+        src="/images/studio-hero.webp"
+        alt=""
+        width="1536"
+        height="1024"
+        fetchPriority="high"
+        decoding="async"
+        style={{ opacity: 0 }}
+        css={{
+          display: "block",
+          width: "100%",
+          height: "auto",
+          maskImage: "radial-gradient(ellipse closest-side, #000 76%, transparent 100%)",
+        }}
+      />
+    </>
+  );
+});
+
 export default component$(() => {
   // Conditional qstyle declarations use explicit priority because media rules precede base rules.
   useStyles$(`
-    html { scroll-behavior: smooth; background: #ebf5ff; }
+    html { scroll-behavior: auto; background: #ebf5ff; }
     body { margin: 0; }
     main, main *, main *::before, main *::after { box-sizing: border-box; }
     main button, main input { font-family: inherit; }
@@ -1146,19 +1219,7 @@ export default component$(() => {
         </div>
 
         <div css={{ position: "relative" }}>
-          <img
-            src="/images/studio-hero.webp"
-            alt=""
-            width="1536"
-            height="1024"
-            fetchPriority="high"
-            css={{
-              display: "block",
-              width: "100%",
-              height: "auto",
-              maskImage: "radial-gradient(ellipse closest-side, #000 76%, transparent 100%)",
-            }}
-          />
+          <HeroArtwork />
           <p
             css={{
               margin: "8px 0 0",
@@ -1509,7 +1570,7 @@ export default component$(() => {
                     fontSize: "31px",
                     fontWeight: 500,
                     letterSpacing: "-0.065em",
-                    lineHeight: "1.14",
+                    lineHeight: "1.5",
                   }}
                 >
                   画面を触る。
@@ -1769,7 +1830,7 @@ export default component$(() => {
                   color: "#171d26",
                   fontSize: "16px",
                   fontWeight: 700,
-                  listStylePosition: "outside",
+                  listStylePosition: "inside",
                   lineHeight: "1.55",
                 }}
               >
@@ -1795,7 +1856,7 @@ export default component$(() => {
                   color: "#171d26",
                   fontSize: "16px",
                   fontWeight: 700,
-                  listStylePosition: "outside",
+                  listStylePosition: "inside",
                   lineHeight: "1.55",
                 }}
               >
@@ -1856,7 +1917,7 @@ export default component$(() => {
                   color: "#171d26",
                   fontSize: "16px",
                   fontWeight: 700,
-                  listStylePosition: "outside",
+                  listStylePosition: "inside",
                   lineHeight: "1.55",
                 }}
               >

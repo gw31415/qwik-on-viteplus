@@ -17,35 +17,35 @@ const toolCards = [
     name: "Qwik",
     href: "https://next.qwik.dev/",
     mark: "#9d8de3",
-    text: "必要な瞬間まで JavaScript を温存する。触れる場所だけが、軽やかに目を覚ます。",
+    text: "必要な瞬間まで JavaScript を読み込まない。操作したコンポーネントだけが、軽やかに動作します。",
   },
   {
     index: "02",
     name: "Qwik Router",
     href: "https://next.qwik.dev/",
     mark: "#8fcbb4",
-    text: "ディレクトリをそのまま導線に。小さく始めても、ページの増え方に迷わない。",
+    text: "ディレクトリ構造がそのままルーティングに。規模が大きくなっても、迷わずページを追加できます。",
   },
   {
     index: "03",
     name: "vite-plus",
     href: "https://viteplus.dev/",
     mark: "#f0aa8d",
-    text: "dev、build、lint、fmt、型チェックをひとつの流れにまとめて、試す時間を増やす。",
+    text: "開発、ビルド、リント、フォーマット、型チェックをひとつのワークフローに統合。開発に集中できる時間を増やします。",
   },
   {
     index: "04",
     name: "qstyle",
     href: "https://github.com/gw31415/qstyle",
     mark: "#9d8de3",
-    text: "コンポーネントのそばにスタイルを書く。css prop から、画面のリズムまで見渡せる。",
+    text: "コンポーネント内にスタイルを記述。css prop から全体のレイアウトまでスムーズに見通せます。",
   },
   {
     index: "05",
     name: "Cloudflare Workers",
     href: "https://developers.cloudflare.com/workers/",
     mark: "#8fcbb4",
-    text: "SSR と静的アセットを、エッジへ。そのまま公開できる出口まで用意されている。",
+    text: "SSR と静的アセットをエッジ環境へ。そのまま本番公開できるデプロイ環境があらかじめ用意されています。",
   },
 ] as const;
 
@@ -57,7 +57,7 @@ const SectionIntro = component$(
     return (
       <div
         css={{
-          maxWidth: "700px",
+          maxWidth: "900px",
           marginBottom: "48px",
         }}
       >
@@ -190,7 +190,7 @@ const ToolCard = component$(
             textUnderlineOffset: "4px",
           }}
         >
-          ドキュメントを読む ↗
+          ドキュメントを見る ↗
         </a>
       </article>
     );
@@ -255,12 +255,12 @@ const StampDemo = component$(() => {
           lineHeight: "1.18",
         }}
       >
-        押すと、
+        クリックすると、
         <br />
-        ちゃんと弾む。
+        インタラクティブに反応。
       </h3>
       <p css={{ margin: "14px 0 0", color: "#717c89", fontSize: "14px", lineHeight: "1.75" }}>
-        押すたびに言葉が変わる、小さなスタンプ。何度でも、気の向くままに。
+        押すたびにテキストが変わる、小さなスタンプ。何度でも自由に試せます。
       </p>
       <div
         css={{
@@ -388,12 +388,12 @@ const StyleDemo = component$(() => {
           lineHeight: "1.18",
         }}
       >
-        触りながら、
+        操作しながら、
         <br />
-        表現を決める。
+        デザインを調整。
       </h3>
       <p css={{ margin: "14px 0 0", color: "#717c89", fontSize: "14px", lineHeight: "1.75" }}>
-        色、角丸、大きさ。デザインの判断を小さな操作に切り出します。
+        カラー、角丸、サイズ。デザインのパラメータをパラメータ変更で直感的に切り替えられます。
       </p>
       <div
         css={{
@@ -427,7 +427,7 @@ const StyleDemo = component$(() => {
               "transform 180ms ease, border-radius 180ms ease, background-color 180ms ease",
           }}
         >
-          ここが変わる
+          プレビュー
         </div>
       </div>
       <div css={{ marginTop: "21px" }}>
@@ -497,7 +497,7 @@ const StyleDemo = component$(() => {
             css={{ display: "grid", gap: "5px", color: "#535862", fontSize: "12px" }}
           >
             <span>
-              大きさ <output for="scale">{Math.round(previewScale.value * 100)}%</output>
+              サイズ <output for="scale">{Math.round(previewScale.value * 100)}%</output>
             </span>
             <input
               id="scale"
@@ -586,12 +586,12 @@ const InvitationDemo = component$(() => {
           lineHeight: "1.18",
         }}
       >
-        選んで、
+        選択して、
         <br />
-        一枚に仕上げる。
+        1つのカードを作成。
       </h3>
       <p css={{ margin: "14px 0 0", color: "#717c89", fontSize: "14px", lineHeight: "1.75" }}>
-        名前をつけて、色と道具を選ぶ。自分だけの招待状を一枚。
+        名前を入力し、カラーとツールを選択。自分だけの招待状を作成しましょう。
       </p>
       <div
         style={{
@@ -882,12 +882,12 @@ const StartCommands = component$(() => {
               ? "コピーできませんでした。表示中のコマンドを選択してコピーしてください。"
               : copyStatus.value === "copying"
                 ? "コピーしています…"
-                : "SSR の開発サーバーが立ち上がります。"}
+                : "SSR 開発サーバーが起動します。"}
         </p>
       </div>
       <p css={{ margin: "22px 0 0", color: "#8c95a5", fontSize: "12px", lineHeight: "1.8" }}>
-        本番ビルドは pnpm build、ローカルでの確認は pnpm preview。Cloudflare
-        のアカウントと設定を用意したら、pnpm deploy で公開できます。
+        本番ビルドは pnpm build、ローカルでのプレビュー確認は pnpm preview。Cloudflare
+        の設定完了後、pnpm deploy で簡単にデプロイできます。
       </p>
     </div>
   );
@@ -1048,7 +1048,7 @@ export default component$(() => {
               "&:hover": { color: "#0a0d12" },
             }}
           >
-            道具
+            ツール
           </a>
           <a
             href="#lab"
@@ -1061,7 +1061,7 @@ export default component$(() => {
               "&:hover": { color: "#0a0d12" },
             }}
           >
-            実験室
+            プレイグラウンド
           </a>
           <a
             href="#start"
@@ -1137,7 +1137,7 @@ export default component$(() => {
           >
             つくる楽しさを、
             <br />
-            <span css={{ color: "#66558f" }}>すぐ、かたちに。</span>
+            <span css={{ color: "#66558f" }}>すぐに、かたちに。</span>
           </h1>
           <p
             css={{
@@ -1148,8 +1148,10 @@ export default component$(() => {
               lineHeight: "1.9",
             }}
           >
-            qwik-on-viteplus は、小さな制作スタジオのように触って学べるスターターです。 Qwik
-            の軽さ、qstyle の近さ、Cloudflare へ出ていく道を、ひとつの画面に束ねました。
+            qwik-on-viteplus
+            は、小さな制作スタジオのように動かしながら学べるスターターキットです。Qwik
+            の軽量さ、qstyle の使いやすさ、そして Cloudflare
+            へのデプロイ環境を、ひとつの画面に集約しました。
           </p>
           <div
             css={{
@@ -1180,7 +1182,7 @@ export default component$(() => {
                 },
               }}
             >
-              まず触ってみる ↘
+              体験してみる ↘
             </a>
             <a
               href="#start"
@@ -1202,7 +1204,7 @@ export default component$(() => {
                 },
               }}
             >
-              はじめるコマンドを見る
+              セットアップコマンドを見る
             </a>
           </div>
           <p
@@ -1229,7 +1231,7 @@ export default component$(() => {
               letterSpacing: "0.06em",
             }}
           >
-            ひらめきのための、小さな道具箱。
+            アイデアを形にする、小さなツールボックス。
           </p>
         </div>
       </section>
@@ -1248,8 +1250,8 @@ export default component$(() => {
           <SectionIntro
             index="01"
             label="THE TOOL TABLE"
-            title={"道具を知る。\nつくる幅が広がる。"}
-            copy="ひとつずつは小さな選択。でも、開発の入口から公開の出口までが同じ机に乗ると、試したいことを試せる速度が変わります。"
+            title="ツールを知る。開発の幅が広がる。"
+            copy="ひとつひとつは小さな選択肢です。しかし、開発の入り口からデプロイまでがひとつの環境に揃うことで、試行錯誤のスピードが格段に上がります。"
           />
           <div
             css={{
@@ -1313,7 +1315,7 @@ export default component$(() => {
               >
                 最初の一歩を、
                 <br />
-                ちゃんと触れる形にする。
+                実際に動かせる形にする。
               </p>
               <p
                 css={{
@@ -1323,7 +1325,7 @@ export default component$(() => {
                   lineHeight: "1.7",
                 }}
               >
-                読むだけで終わらず、見て、押して、変えて、採用する。
+                ドキュメントを読むだけでなく、見て、操作して、コードを変更し、取り入れる。
               </p>
             </article>
           </div>
@@ -1344,8 +1346,8 @@ export default component$(() => {
           <SectionIntro
             index="02"
             label="THE PLAYGROUND"
-            title="小さな反応を、三つの角度から。"
-            copy="押して、変えて、組み合わせる。説明を読む前に、まずは手を動かしてみてください。3つの小さな体験は、そのまま次の画面づくりのヒントになります。"
+            title="3つのコンポーネントを、実際に体験。"
+            copy="動かして、変更して、組み合わせる。説明を読む前に、まずは手を動かしてみてください。ここでの体験が、そのまま次の画面づくりのヒントになります。"
           />
 
           <div
@@ -1382,8 +1384,8 @@ export default component$(() => {
           <SectionIntro
             index="03"
             label="FROM TOUCH TO CODE"
-            title={"触ると、\nコードが近くなる。"}
-            copy="このスターターが見せたいのは完成品だけではありません。状態、表現、公開先がどこでつながるかを、画面の中で追えることです。"
+            title="UIを動かすと、コードの仕組みが見えてくる。"
+            copy="このスターターの目的は、単なる「完成品」の提供ではありません。状態管理・スタイリング・デプロイ環境がどのように連携しているかを、画面を通して理解できる点にあります。"
           />
           <div
             css={{
@@ -1458,7 +1460,7 @@ export default component$(() => {
                       letterSpacing: "-0.04em",
                     }}
                   >
-                    反応を持つ
+                    状態を持つ
                   </p>
                   <p
                     css={{
@@ -1468,7 +1470,7 @@ export default component$(() => {
                       lineHeight: "1.7",
                     }}
                   >
-                    押したら、状態が変わる。
+                    操作によって State（状態）が変化。
                   </p>
                 </div>
                 <div
@@ -1492,7 +1494,7 @@ export default component$(() => {
                       letterSpacing: "-0.04em",
                     }}
                   >
-                    見た目を決める
+                    スタイリング
                   </p>
                   <p
                     css={{
@@ -1502,7 +1504,7 @@ export default component$(() => {
                       lineHeight: "1.7",
                     }}
                   >
-                    触ったら、表現が変わる。
+                    操作によって Style（見た目）が変化。
                   </p>
                 </div>
                 <div
@@ -1523,7 +1525,7 @@ export default component$(() => {
                       letterSpacing: "-0.04em",
                     }}
                   >
-                    外へ出す
+                    デプロイ
                   </p>
                   <p
                     css={{
@@ -1533,7 +1535,7 @@ export default component$(() => {
                       lineHeight: "1.7",
                     }}
                   >
-                    できたら、Workers へ。
+                    完成したら、Cloudflare Workers へデプロイ。
                   </p>
                 </div>
               </div>
@@ -1573,11 +1575,11 @@ export default component$(() => {
                     lineHeight: "1.5",
                   }}
                 >
-                  画面を触る。
+                  画面を動かす。
                   <br />
-                  判断する。
+                  動作を確認する。
                   <br />
-                  改造する。
+                  カスタマイズする。
                 </p>
                 <p
                   css={{
@@ -1587,7 +1589,7 @@ export default component$(() => {
                     lineHeight: "1.8",
                   }}
                 >
-                  最小構成だから、道具の境界が見えます。
+                  最小構成だからこそ、各ツールの役割と境目が明確にわかります。
                 </p>
               </div>
             </div>
@@ -1609,8 +1611,8 @@ export default component$(() => {
           <SectionIntro
             index="04"
             label="START SMALL"
-            title="最初の一行を、迷わず打つ。"
-            copy="リポジトリを取得したら、開発サーバーを起動。画面を触ってから、自分のコンポーネントを足していけます。"
+            title="迷わず、最初の一行をコマンドラインへ。"
+            copy="リポジトリをクローンしたら、開発サーバーを起動。UI を確認しながら、コンポーネントを追加していきましょう。"
           />
           <div
             css={{
@@ -1681,7 +1683,7 @@ export default component$(() => {
                         fontWeight: 700,
                       }}
                     >
-                      Qwik Router のページ構成
+                      Qwik Router による直感的なページ構造
                     </strong>
                     <small
                       css={{
@@ -1692,7 +1694,7 @@ export default component$(() => {
                         lineHeight: "1.6",
                       }}
                     >
-                      src/routes から自然に広げられます。
+                      src/routes から簡単にページを拡張できます。
                     </small>
                   </span>
                 </li>
@@ -1724,7 +1726,7 @@ export default component$(() => {
                         fontWeight: 700,
                       }}
                     >
-                      css prop の近いスタイリング
+                      css prop によるスムーズなスタイリング
                     </strong>
                     <small
                       css={{
@@ -1735,7 +1737,7 @@ export default component$(() => {
                         lineHeight: "1.6",
                       }}
                     >
-                      画面とコードを行き来する距離を短く。
+                      コード編集と画面確認の往復にかかるストレスを軽減します。
                     </small>
                   </span>
                 </li>
@@ -1767,7 +1769,7 @@ export default component$(() => {
                         fontWeight: 700,
                       }}
                     >
-                      Cloudflare Workers への出口
+                      Cloudflare Workers へのスムーズなデプロイ
                     </strong>
                     <small
                       css={{
@@ -1778,7 +1780,7 @@ export default component$(() => {
                         lineHeight: "1.6",
                       }}
                     >
-                      SSR とアセットをまとめて扱えます。
+                      SSR と静的アセットを一括でデプロイできます。
                     </small>
                   </span>
                 </li>
@@ -1798,7 +1800,7 @@ export default component$(() => {
                   "&:hover": { color: "#9a543a" },
                 }}
               >
-                リポジトリを読む ↗
+                リポジトリを見る ↗
               </a>
             </div>
           </div>
@@ -1819,8 +1821,8 @@ export default component$(() => {
           <SectionIntro
             index="05"
             label="A FEW HONEST ANSWERS"
-            title="採用前に、知っておきたいこと。"
-            copy="最小のスターターだからこそ、向いている始め方と、先に理解しておきたい前提があります。README に書かれていることを、短くこちらにも。"
+            title="導入前に知っておきたいポイント。"
+            copy="シンプルなスターターだからこそ、適したユースケースと事前の前提条件があります。README の重要ポイントをまとめました。"
           />
           <div css={{ borderTop: "1px solid #dfe6ee" }}>
             <details css={{ padding: "22px 0", borderBottom: "1px solid #dfe6ee" }}>
@@ -1834,7 +1836,7 @@ export default component$(() => {
                   lineHeight: "1.55",
                 }}
               >
-                本番採用を考える前に、何を確認すべき？
+                本番環境へ導入する前に、何を確認すべき？
               </summary>
               <p
                 css={{
@@ -1846,7 +1848,7 @@ export default component$(() => {
                 }}
               >
                 Qwik 2.0.0-beta と vite-plus 0.x
-                を組み合わせた実験的な構成です。破壊的な変更の可能性があるため、まずは小さなページでビルド、型チェック、デプロイまでを試してから判断してください。
+                を組み合わせた実験的構成です。破壊的変更の可能性があるため、まずは小規模なページでビルド・型チェック・デプロイを検証してから判断してください。
               </p>
             </details>
             <details css={{ padding: "22px 0", borderBottom: "1px solid #dfe6ee" }}>
@@ -1860,7 +1862,7 @@ export default component$(() => {
                   lineHeight: "1.55",
                 }}
               >
-                lint だけで Qwik の安全性を見られる？
+                lint のみで Qwik の安全性を検証できる？
               </summary>
               <p
                 css={{
@@ -1871,7 +1873,7 @@ export default component$(() => {
                   lineHeight: "1.9",
                 }}
               >
-                型情報が必要な{" "}
+                型情報を必要とする{" "}
                 <code
                   css={{
                     padding: "2px 5px",
@@ -1883,7 +1885,7 @@ export default component$(() => {
                 >
                   qwik/valid-lexical-scope
                 </code>{" "}
-                と{" "}
+                や{" "}
                 <code
                   css={{
                     padding: "2px 5px",
@@ -1895,7 +1897,7 @@ export default component$(() => {
                 >
                   qwik/use-async-top
                 </code>{" "}
-                は、現在の lint 経路では無効化されています。
+                は、現在の lint 設定では無効化されています。必ず{" "}
                 <code
                   css={{
                     padding: "2px 5px",
@@ -1907,7 +1909,7 @@ export default component$(() => {
                 >
                   pnpm build.types
                 </code>{" "}
-                も必ず併用します。
+                によるチェックを併用してください。
               </p>
             </details>
             <details css={{ padding: "22px 0", borderBottom: "1px solid #dfe6ee" }}>
@@ -1921,7 +1923,7 @@ export default component$(() => {
                   lineHeight: "1.55",
                 }}
               >
-                どこから改造すると、この構成の良さが分かる？
+                どこからカスタマイズを始めると、この構成の強みが実感できる？
               </summary>
               <p
                 css={{
@@ -1932,9 +1934,8 @@ export default component$(() => {
                   lineHeight: "1.9",
                 }}
               >
-                まずはこのページの signal を一つ増やし、qstyle の css prop を一箇所変え、最後に
-                routes
-                を一つ足すのがおすすめです。小さな変更が、状態・見た目・ルーティングへどう届くかを追えます。
+                まずはこのページの signal をひとつ増やし、qstyle の css prop を変更し、最後に routes
+                を追加してみるのがおすすめです。小さな変更が「状態・スタイル・ルーティング」へどう反映されるかが明確に把握できます。
               </p>
             </details>
           </div>
@@ -1976,7 +1977,7 @@ export default component$(() => {
               qwik-on-viteplus
             </p>
             <p css={{ margin: "10px 0 0", color: "#6d7887", fontSize: "12px", lineHeight: "1.7" }}>
-              小さな制作スタジオから、次の一枚を。
+              小さな制作スタジオから、次のアイデアを。
             </p>
           </div>
           <div css={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "18px" }}>
@@ -1990,7 +1991,7 @@ export default component$(() => {
                 "&:hover": { color: "#0a0d12" },
               }}
             >
-              トップへ ↑
+              トップへ戻る ↑
             </a>
             <a
               href="https://qwik.dev/"
@@ -2004,7 +2005,7 @@ export default component$(() => {
                 "&:hover": { color: "#0a0d12" },
               }}
             >
-              Qwik Docs ↗
+              Qwik 公式ドキュメント ↗
             </a>
             <span
               css={{
